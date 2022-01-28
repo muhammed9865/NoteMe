@@ -7,5 +7,34 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.noteme.ui.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="@string/home" >
+        <action
+            android:id="@+id/action_homeFragment_to_allFragment"
+            app:destination="@id/allFragment"
+            app:enterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_homeFragment_to_favouritesFragment"
+            app:destination="@id/favouritesFragment"
+            app:enterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/allFragment"
+        android:name="com.example.noteme.ui.all.AllFragment"
+        android:label="@string/all"
+        tools:layout="@layout/fragment_all" >
+        <action
+            android:id="@+id/action_allFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouritesFragment"
+        android:name="com.example.noteme.ui.favourite.FavouritesFragment"
+        android:label="@string/favourite"
+        tools:layout="@layout/fragment_favourites" >
+        <action
+            android:id="@+id/action_favouritesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>
